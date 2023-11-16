@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-11-16T16:43:58Z"
+  labels:
+    app: ionic-app
+  name: ionic-app
+  namespace: project
+  resourceVersion: "267560"
+  uid: 96f08069-a8a9-4498-a6a8-7f14bfb5860a
+spec:
+  clusterIP: 10.104.205.116
+  clusterIPs:
+  - 10.104.205.116
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30861
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ionic-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
